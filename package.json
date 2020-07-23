@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "*",
+    "lodash": "^4.17.19",
     "neo4j-driver": "*",
     "nodemon": "^2.0.4",
     "prop-types": "^15.7.2"
