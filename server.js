@@ -1,9 +1,10 @@
+require('dotenv').config()
 const express = require('express');
 //const config = require('config')
 const neo4JDriver = require('./neo4j')
 const app = express();
 const cors = require('cors')
-require('dotenv').config()
+const config = require('./config');
 const neo4j = require('neo4j-driver');
 
 //boady-parser middleware
@@ -26,7 +27,7 @@ app.use('*', (req, res) => {
     res.send('invalid api endpoint')
 })
 
-const port = process.env.PORT || 5050
+const port = config.PORT
 
 app.listen(port, () => console.log(`server started on port ${port}`))
 

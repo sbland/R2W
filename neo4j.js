@@ -1,11 +1,12 @@
 const neo4j = require('neo4j-driver');
+const config = require('./config');
 
 // Create Driver
 const driver = neo4j.driver(
-    'bolt://52.87.235.130:32924', 
+    config.DATABASE_URL,
     neo4j.auth.basic(
-        'neo4j', 
-        'quarterdecks-woods-banks'
+        config.DATABASE_USER,
+        config.DATABASE_PSWRD,
     )
 )
 
