@@ -44,5 +44,14 @@ router.post('/addCase', (req,res) => {
         .catch(e => {console.log(e)})
 })
 
+// Adding the below to the end of your route files will ensure any invalid url
+// that starts with `/api/cases/` will fail instead of being passed onto the next
+// endpoint in the server
+router.use('*', (req, res) => {
+    console.log('Invalid api endpoint')
+    res.status(403)
+    res.send('invalid api endpoint')
+})
+
 
 module.exports = router
